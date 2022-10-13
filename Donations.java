@@ -9,16 +9,16 @@ public class Donations {
 		private  int numIndividual ; // number of individual donations
 		private  int numBusiness ; // number of business donations
 		private  int numOther ;// number of other donations
-		private  double amntIndividual = INITVAL; // amount of donations ($)
-		private  double amntBusiness = INITVAL ;// amount  of donations ($)
-		private  double amntOther = INITVAL;// amount of donations ($)
+		private  double amtIndividual = INITVAL; // amount of donations ($)
+		private  double amtBusiness = INITVAL ;// amount  of donations ($)
+		private  double amtOther = INITVAL;// amount of donations ($)
 		
 		// Method to decrement and Increment Number and Amount of donations
 		public void  processDonation(String cat, double donations){
 			
 			
 			if (cat =="individual") {
-				amntIndividual  = amntIndividual + donations;
+				amtIndividual  = amtIndividual + donations;
 				if (donations > 0) {
 				numIndividual +=1 ;
 				}
@@ -28,7 +28,7 @@ public class Donations {
 			
 		}
 			if (cat == "business") {
-				amntBusiness  = amntBusiness + donations;
+				amtBusiness  = amtBusiness + donations;
 				if (donations >0 ) {
 				numBusiness+=1;
 				}
@@ -37,7 +37,7 @@ public class Donations {
 				}
 			}
 			if (cat=="other") {
-				amntOther = amntOther + donations;
+				amtOther = amtOther + donations;
 				if (donations >0) {
 					numOther+=1;
 				}
@@ -48,9 +48,9 @@ public class Donations {
 	}
 		// Method to print all statements and statistics 
 	public void getStatistics()	{
-	System.out.println("Individual: #:" + numIndividual + " $" + amntIndividual);
-	System.out.println("Business: #:" + numBusiness+ " $" + amntBusiness);
-	System.out.println("Other: #:" + numOther + " $" + amntOther);
+	System.out.println("Individual: #:" + numIndividual + " $" + amtIndividual);
+	System.out.println("Business: #:" + numBusiness+ " $" + amtBusiness);
+	System.out.println("Other: #:" + numOther + " $" + amtOther);
 		
 	}
  
