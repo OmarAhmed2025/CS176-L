@@ -13,29 +13,14 @@ public class PersonTester
        */
 	   
 	   // Initializing Objects 
-	   Person p1 = new Person();
-	   Person p2 = new Person();
-	   Student s1 = new Student();
-	   Student s2 = new Student();
-	   Instructor i1 = new Instructor();
-	   
+	   Person p1 = new Person("John", 1965);
+	   Person p2 = new Person("Mary Ann", 1970);
+	   Student s1 = new Student("Ann", 1982, "Computer Science");
+	   Student s2 = new Student("Thomas", 1986,"Biology");
+	   Instructor i1 = new Instructor("Joseph", 1954,65000);
+	    
    
-	   // Setting the  name and birth Year 
-	   
-	   p1.setname("John"); p1.setBrithYear(1965);
-	   p2.setname("Mary Ann "); p2.setBrithYear(1970);
-	   s1.setname("Ann"); s1.setBrithYear(1982);
-	   s2.setname("Thomas"); s2.setBrithYear(1986);
-	   i1.setname("Joseph"); i1.setBrithYear(1954);
-	   
-	   //Setting the Major for the students
-	   
-	   s1.setMajor("Computer Science");
-	   s2.setMajor("Biology");
-	   
-	   // Setting the salary of the instructor
-	   
-	   i1.setSalary(65000.0);
+	  
      
 	  System.out.println(p1.toString());
       System.out.println("Expected: Person[name=John,birthYear=1965]");

@@ -6,6 +6,11 @@ class Person{
 	private int  birthYear = 0 ;
 	
 	
+	public  Person(String nam, int year) {
+		setname(nam);
+		setBrithYear(year); 
+	}
+	
 	public String setname(String nameParam) { // Method to set name value 
 		this.name = nameParam;
 		return nameParam;
