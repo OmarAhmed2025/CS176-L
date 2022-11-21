@@ -1,8 +1,18 @@
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /**
    This program demonstrates the measurable Country class.
 */
 public class MeasurableTester
 {
+	private static final int FRAME_WIDTH = 240; // Constants for frame  width and hieght 
+	private static final int FRAME_HEIGHT = 160;
+
    public static void main(String[] args)
    {
      final  int SIZE = 5;
@@ -73,6 +83,67 @@ public class MeasurableTester
       System.out.println("Expected: 50.0");
       System.out.println("");
       
-      	
+      Scanner input = new Scanner(System.in);
+   
+      	  System.out.println("VERSION TWO");
+      	  System.out.println();
+    	  System.out.print("Enter metric to use, 1 for maximum, 2 for minimum, 3 for average: ");
+   	   		 int whichMetric = input.nextInt();  
+      
+
+	   
+	  
+	   String metricNeeded= "average";
+
+		   
+	   
+	   if (whichMetric == 1)
+	  {
+		   metricNeeded = "Maximum";
+	  }
+	   if (whichMetric == 2) 
+	  {
+		  metricNeeded = "Minimum";
+	  }
+	   if (whichMetric == 3) 
+	  {
+		  metricNeeded = "Average";
+		if(whichMetric == -1) {
+			metricNeeded = "End";
+		}
+	  }
+	 
+ 
+//Creating the frame and the panel  
+
+	  JPanel programPanel = new JPanel();
+	  JFrame measurableFrame = new JFrame();
+	  measurableFrame.add(programPanel);
+
+//Create the button and the listener      
+    JButton measurableButton = new JButton("Get " + metricNeeded + " Balance");
+    programPanel.add(measurableButton);
+    ActionListener measurableListener = new ButtonListener(bank,metricNeeded);
+    measurableButton .addActionListener(measurableListener);
+
+   
+    JButton measurableButton2 = new JButton("Get " + metricNeeded + " Area");
+    programPanel.add(measurableButton2);
+    ActionListener measurableListener2 = new ButtonListener(countries,metricNeeded);
+    measurableButton2.addActionListener(measurableListener2);
+    
+ 
+    JButton measurableButton3 = new JButton("Get " + metricNeeded + " Score");
+    programPanel.add(measurableButton3);
+    ActionListener measurableListener3 = new ButtonListener(quizzes,metricNeeded);
+    measurableButton3.addActionListener(measurableListener3);
+   
+    
+  
+    measurableFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+    measurableFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    measurableFrame.setVisible(true);
+	   	
+	    
+      }
    }
-}
